@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
-	"tiktok_test/common"
-	"tiktok_test/db"
 
+	"github.com/Iribise/tiktok-simple/common"
+	"github.com/Iribise/tiktok-simple/db"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )
@@ -35,13 +35,13 @@ func Follow(c *gin.Context) {
 	if action, _ := strconv.Atoi(c.Query("action_type")); action == 1 {
 		db.RDB.SAdd(ctx, user_key, to_user_id)
 		db.RDB.SAdd(ctx, to_user_key, user_id)
-		db.DB.Model(&db.UserInfo{}).Where("id = ?", user_id).Update("folllow_count", gorm.Expr("folllow_count + ?", 1))
-		db.DB.Model(&db.UserInfo{}).Where("id = ?", to_user_id).Update("folllower_count", gorm.Expr("folllower_count + ?", 1))
+		db.DB.Model(&db.UserInfo{}).Where("id = ?", user_id).Update("follow_count", gorm.Expr("follow_count + ?", 1))
+		db.DB.Model(&db.UserInfo{}).Where("id = ?", to_user_id).Update("follower_count", gorm.Expr("follower_count + ?", 1))
 	} else {
 		db.RDB.SRem(ctx, user_key, to_user_id)
 		db.RDB.SRem(ctx, to_user_key, user_id)
-		db.DB.Model(&db.UserInfo{}).Where("id = ?", user_id).Update("folllow_count", gorm.Expr("folllow_count - ?", 1))
-		db.DB.Model(&db.UserInfo{}).Where("id = ?", to_user_id).Update("folllower_count", gorm.Expr("folllower_count - ?", 1))
+		db.DB.Model(&db.UserInfo{}).Where("id = ?", user_id).Update("follow_count", gorm.Expr("follow_count - ?", 1))
+		db.DB.Model(&db.UserInfo{}).Where("id = ?", to_user_id).Update("follower_count", gorm.Expr("follower_count - ?", 1))
 	}
 	c.JSON(http.StatusOK, FollowResponse{StatusCode: 0, StatusMsg: "success"})
 }

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
-	"tiktok_test/common"
-	"tiktok_test/db"
 
+	"github.com/Iribise/tiktok-simple/common"
+	"github.com/Iribise/tiktok-simple/db"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )

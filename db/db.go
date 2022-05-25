@@ -1,8 +1,8 @@
 package db
 
 import (
-	"tiktok_test/common"
-	"tiktok_test/constants"
+	"github.com/Iribise/tiktok-simple/common"
+	"github.com/Iribise/tiktok-simple/constants"
 
 	"github.com/go-redis/redis/v8"
 	"gorm.io/driver/mysql"

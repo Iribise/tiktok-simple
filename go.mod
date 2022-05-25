@@ -1,4 +1,4 @@
-module tiktok_test
+module github.com/Iribise/tiktok-simple
 
 go 1.18
 

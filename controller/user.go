@@ -3,12 +3,12 @@ package controller
 import (
 	"errors"
 	"net/http"
-	"tiktok_test/common"
-	"tiktok_test/db"
 
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 
+	"github.com/Iribise/tiktok-simple/common"
+	"github.com/Iribise/tiktok-simple/db"
 	"github.com/gin-gonic/gin"
 )
 
@@ -70,7 +70,7 @@ func Register(c *gin.Context) {
 		})
 		return
 	}
-	userinfo = db.UserInfo{Id: nextId, Name: username, FolllowCount: 0, FolllowerCount: 0, IsFollow: false}
+	userinfo = db.UserInfo{Id: nextId, Name: username, FollowCount: 0, FollowerCount: 0, IsFollow: false}
 	db.DB.Create(&userinfo)
 	user := db.User{Id: nextId, Password: hash}
 	db.DB.Create(&user)

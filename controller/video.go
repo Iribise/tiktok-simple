@@ -6,11 +6,11 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
-	"tiktok_test/common"
-	"tiktok_test/constants"
-	"tiktok_test/db"
 	"time"
 
+	"github.com/Iribise/tiktok-simple/common"
+	"github.com/Iribise/tiktok-simple/constants"
+	"github.com/Iribise/tiktok-simple/db"
 	"github.com/gin-gonic/gin"
 )
 

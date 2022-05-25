@@ -1,11 +1,11 @@
 package common
 
 type UserInfo struct {
-	Id             int32  `gorm:"primaryKey" json:"id,omitempty"`
-	Name           string `json:"name,omitempty"`
-	FolllowCount   int32  `json:"follow_count,omitempty"`
-	FolllowerCount int32  `json:"follower_count,omitempty"`
-	IsFollow       bool   `gorm:"-" json:"is_follow,omitempty"`
+	Id            int32  `gorm:"primaryKey" json:"id,omitempty"`
+	Name          string `json:"name,omitempty"`
+	FollowCount   int32  `json:"follow_count,omitempty"`
+	FollowerCount int32  `json:"follower_count,omitempty"`
+	IsFollow      bool   `gorm:"-" json:"is_follow,omitempty"`
 }
 
 type User struct {

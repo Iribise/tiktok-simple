@@ -1,9 +1,8 @@
 package main
 
 import (
-	"tiktok_test/controller"
-	"tiktok_test/db"
-
+	"github.com/Iribise/tiktok-simple/controller"
+	"github.com/Iribise/tiktok-simple/db"
 	"github.com/gin-gonic/gin"
 )
 
